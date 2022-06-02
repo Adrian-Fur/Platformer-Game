@@ -53,7 +53,6 @@ public class PlayerControl : MonoBehaviour
             rigidbody2d.velocity = new Vector2(-moveSpeed, rigidbody2d.velocity.y);
             animator.SetBool("isRunning", true);
             isRunning = true;
-
         }
         else
         {
@@ -85,10 +84,9 @@ public class PlayerControl : MonoBehaviour
 
     void Flip()
     {
+        facingRight = !facingRight;
         Vector3 currentScale = gameObject.transform.localScale;
         currentScale.x *= -1;
         gameObject.transform.localScale = currentScale;
-
-        facingRight = !facingRight;
     }
 }

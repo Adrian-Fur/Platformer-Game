@@ -1195,7 +1195,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4187483004367958, guid: 5ede2cae6fca7c9469ee79ee30aafd7d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.8935126
+      value: -0.91
       objectReference: {fileID: 0}
     - target: {fileID: 4187483004367958, guid: 5ede2cae6fca7c9469ee79ee30aafd7d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1228,10 +1228,6 @@ PrefabInstance:
     - target: {fileID: 4187483004367958, guid: 5ede2cae6fca7c9469ee79ee30aafd7d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5866309692807879999, guid: 5ede2cae6fca7c9469ee79ee30aafd7d, type: 3}
-      propertyPath: m_Constraints
-      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ede2cae6fca7c9469ee79ee30aafd7d, type: 3}
@@ -1362,10 +1358,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1581025989, guid: 5083cd7a3eb180c4eae665d4346b2433, type: 3}
-      propertyPath: attackRange
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 1795201428765544, guid: 5083cd7a3eb180c4eae665d4346b2433, type: 3}
       propertyPath: m_Name
       value: Player Knight
@@ -1373,10 +1365,6 @@ PrefabInstance:
     - target: {fileID: 4571881049862082, guid: 5083cd7a3eb180c4eae665d4346b2433, type: 3}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4571881049862082, guid: 5083cd7a3eb180c4eae665d4346b2433, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4571881049862082, guid: 5083cd7a3eb180c4eae665d4346b2433, type: 3}
       propertyPath: m_LocalPosition.x
