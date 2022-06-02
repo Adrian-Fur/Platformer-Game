@@ -18,10 +18,10 @@ public class PlayerControl : MonoBehaviour
 
     private void Awake()
     {
-        rigidbody2d = transform.GetComponent<Rigidbody2D>();
-        boxCollider2D = transform.GetComponent<BoxCollider2D>();
-        capsuleCollider2D = transform.GetComponent<CapsuleCollider2D>();
-        animator = transform.GetComponent<Animator>();
+        rigidbody2d = GetComponent<Rigidbody2D>();
+        boxCollider2D = GetComponent<BoxCollider2D>();
+        capsuleCollider2D = GetComponent<CapsuleCollider2D>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -88,5 +88,10 @@ public class PlayerControl : MonoBehaviour
         Vector3 currentScale = gameObject.transform.localScale;
         currentScale.x *= -1;
         gameObject.transform.localScale = currentScale;
+    }
+
+    public Vector3 PlayerPosition()
+    {
+        return transform.position;
     }
 }

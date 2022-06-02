@@ -1174,6 +1174,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!4 &149303692 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4187483004367958, guid: 5ede2cae6fca7c9469ee79ee30aafd7d, type: 3}
+  m_PrefabInstance: {fileID: 427439919}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &427439919
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1228,6 +1233,26 @@ PrefabInstance:
     - target: {fileID: 4187483004367958, guid: 5ede2cae6fca7c9469ee79ee30aafd7d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361943912317170614, guid: 5ede2cae6fca7c9469ee79ee30aafd7d, type: 3}
+      propertyPath: m_Size.x
+      value: 0.40082073
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361943912317170614, guid: 5ede2cae6fca7c9469ee79ee30aafd7d, type: 3}
+      propertyPath: m_Size.y
+      value: 4.891823
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361943912317170614, guid: 5ede2cae6fca7c9469ee79ee30aafd7d, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.67542076
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361943912317170614, guid: 5ede2cae6fca7c9469ee79ee30aafd7d, type: 3}
+      propertyPath: m_Offset.y
+      value: 2.3296375
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361943912317170614, guid: 5ede2cae6fca7c9469ee79ee30aafd7d, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ede2cae6fca7c9469ee79ee30aafd7d, type: 3}
@@ -1454,7 +1479,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 2.3443115, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1679,6 +1704,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1896320234
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1896320235}
+  m_Layer: 7
+  m_Name: EnemyAttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1896320235
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896320234}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 149303692}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1919067629
 GameObject:
   m_ObjectHideFlags: 0
