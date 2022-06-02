@@ -2,53 +2,88 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    enum State 
-    {
-        Walking,
-        ChaseTarget
-    }
-
+  
     public int maxEnemyHealth = 100;
     int currentEnemyHealth;
     [SerializeField] float enemyMoveSpeed = 1f;
-    float inputHorizontal;
     bool facingLeft = true;
+    [SerializeField] float chaseDistance = 5f;
+    public float attackRange = 0.5f;
+    public LayerMask enemyLayers;
+    public int attackDamage = 40;
+    public float attackRate = 2f;
+    float nextAttackTime = 0f;
+    bool canAttack = false;
 
     Animator animator;
     Rigidbody2D rigidBody;
-    PlayerControl player;
-    Vector3 enemyPosition;
-    State state;
-
+    public Transform attackPoint;
+    PlayerCombat playerCombat;
+    GameObject player;
+  
     void Awake() 
     {
         animator = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
-        player = FindObjectOfType<PlayerControl>();
-        state = State.Walking;
+        playerCombat = FindObjectOfType<PlayerCombat>();
+        player = GameObject.FindWithTag("Player");
     }
+
     void Start()
     {
-        enemyPosition = transform.position;
         currentEnemyHealth = maxEnemyHealth;
     }
 
-    void Update()
+    void Update() 
     {
         rigidBody.velocity = new Vector2(-enemyMoveSpeed, 0f);
-        
+        if (player == null)
+        {
+            canAttack = false;
+        }
+         if (Time.time >= nextAttackTime)
+        {
+            if (IsRangeToPlayer() && playerCombat != null && canAttack)
+            {
+                AttackPlayer();
+                nextAttackTime = Time.time + 1f / attackRate;
+            }
+            
+        }
+    }
+
+    void AttackPlayer()
+    {
+        animator.SetTrigger("Attack");
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            playerCombat.TakeDamage(attackDamage);
+        }
+    }
+
+    public bool IsRangeToPlayer()
+    {   
+        canAttack = true;
+        float distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
+        return distanceToPlayer < chaseDistance;
     }
 
     public void TakeDamage(int damage)
     {
         currentEnemyHealth -= damage;
         animator.SetTrigger("Hurt");
-        animator.SetBool("isWalking", false);
 
         if (currentEnemyHealth <= 0)
         {
             EnemyDie();
         }
+    }
+
+    void EnemyDie()
+    {
+        animator.SetBool("isDead", true);
+        Destroy(gameObject);
     }
 
     void OnTriggerExit2D(Collider2D other) 
@@ -65,23 +100,6 @@ public class Enemy : MonoBehaviour
         currentScale.x *= -1;
         gameObject.transform.localScale = currentScale;
     }
-
-    void EnemyDie()
-    {
-        animator.SetBool("isDead", true);
-        enemyMoveSpeed = 0f;
-        GetComponent<Collider2D>().enabled = false;
-        this.enabled = false;
-    }
-
-    void FindTarget()
-    {
-        float targetRange = 50f;
-        
-        if (Vector3.Distance(transform.position, player.PlayerPosition()) < targetRange)
-        {
-
-        }
-    }
+   
     
 }

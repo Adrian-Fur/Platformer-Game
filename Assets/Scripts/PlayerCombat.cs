@@ -11,11 +11,18 @@ public class PlayerCombat : MonoBehaviour
     public int attackDamage = 40;
     public float attackRate = 2f;
     float nextAttackTime = 0f;
+    public int maxPlayerHealth = 100;
+    int currentPlayerHealth;
 
     private void Awake() 
     {
         animator = GetComponent<Animator>();
         playerControl = GetComponent<PlayerControl>();
+    }
+
+    void Start() 
+    {
+        currentPlayerHealth = maxPlayerHealth;
     }
     void Update()
     {
@@ -55,5 +62,22 @@ public class PlayerCombat : MonoBehaviour
         }
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentPlayerHealth -= damage;
+        animator.SetTrigger("Hurt");
+
+        if (currentPlayerHealth <= 0)
+        {
+            PlayerDie();
+        }
+    }
+
+    void PlayerDie()
+    {
+        animator.SetBool("isDead", true);
+        Destroy(gameObject);
     }
 }

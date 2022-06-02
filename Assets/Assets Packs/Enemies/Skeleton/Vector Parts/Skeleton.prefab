@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1896320234
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1896320235}
+  m_Layer: 7
+  m_Name: EnemyAttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1896320235
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896320234}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.74, y: 1.31, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4187483004367958}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1022982428031314
 GameObject:
   m_ObjectHideFlags: 0
@@ -37,6 +68,7 @@ Transform:
   - {fileID: 4826948769709954}
   - {fileID: 4123888071909326}
   - {fileID: 4358327176971620}
+  - {fileID: 1896320235}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -84,10 +116,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.12585306, y: 2.475111}
+  m_Offset: {x: 0.6035218, y: 2.3399088}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -98,7 +130,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6292658, y: 4.859495}
+  m_Size: {x: 0.3391962, y: 4.87128}
   m_EdgeRadius: 0
 --- !u!50 &5866309692807879999
 Rigidbody2D:
@@ -134,6 +166,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxEnemyHealth: 100
+  enemyMoveSpeed: 0.5
+  chaseDistance: 3
+  attackRange: 0.2
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  attackDamage: 20
+  attackRate: 1
+  attackPoint: {fileID: 1896320235}
 --- !u!1 &1051073019290164
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,7 +207,7 @@ Transform:
   - {fileID: 4530450144604626}
   m_Father: {fileID: 4028136751990744}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -13.163295}
 --- !u!1 &1082656372585938
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,7 +239,7 @@ Transform:
   - {fileID: 4674149055122382}
   m_Father: {fileID: 4187483004367958}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -101.70458}
 --- !u!1 &1088112140071272
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,7 +274,7 @@ Transform:
   - {fileID: 4586286697398614}
   m_Father: {fileID: 4187483004367958}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 79.8827}
 --- !u!1 &1098012686478298
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,7 +391,7 @@ Transform:
   - {fileID: 4072018610483974}
   m_Father: {fileID: 4123888071909326}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -151.6857}
 --- !u!1 &1131492550245736
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,7 +508,7 @@ Transform:
   - {fileID: 4232250624380604}
   m_Father: {fileID: 4123888071909326}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 123.31067}
 --- !u!1 &1233949014941952
 GameObject:
   m_ObjectHideFlags: 0
@@ -699,7 +740,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4187483004367958}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 2.937661}
 --- !u!212 &212632115033238402
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1152,7 +1193,7 @@ Transform:
   - {fileID: 4245625837366328}
   m_Father: {fileID: 4123888071909326}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -17.293919}
 --- !u!1 &1907337518409066
 GameObject:
   m_ObjectHideFlags: 0
