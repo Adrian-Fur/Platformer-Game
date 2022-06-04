@@ -4,7 +4,7 @@ public class Enemy : MonoBehaviour
 {
   
     public int maxEnemyHealth = 100;
-    int currentEnemyHealth;
+    [SerializeField]  int currentEnemyHealth;
     [SerializeField] float enemyMoveSpeed = 1f;
     bool facingLeft = true;
     [SerializeField] float chaseDistance = 5f;
@@ -20,6 +20,8 @@ public class Enemy : MonoBehaviour
     public Transform attackPoint;
     PlayerCombat playerCombat;
     GameObject player;
+    public GameObject flipObject;
+    BoxCollider2D flipCollider;
   
     void Awake() 
     {
@@ -27,6 +29,7 @@ public class Enemy : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();
         playerCombat = FindObjectOfType<PlayerCombat>();
         player = GameObject.FindWithTag("Player");
+        flipCollider = flipObject.GetComponent<BoxCollider2D>();
     }
 
     void Start()
@@ -48,7 +51,6 @@ public class Enemy : MonoBehaviour
                 AttackPlayer();
                 nextAttackTime = Time.time + 1f / attackRate;
             }
-            
         }
     }
 
@@ -88,8 +90,12 @@ public class Enemy : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other) 
     {
-        enemyMoveSpeed = -enemyMoveSpeed;
-        FlipEnemy();
+        other = flipCollider;
+        if (other == flipCollider)
+        {
+            enemyMoveSpeed = -enemyMoveSpeed;
+            FlipEnemy();
+        }
     }
 
     void FlipEnemy()

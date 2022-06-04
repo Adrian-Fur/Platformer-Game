@@ -1,5 +1,63 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &754821687
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 754821688}
+  - component: {fileID: 754821689}
+  m_Layer: 7
+  m_Name: FlipCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &754821688
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754821687}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4187483004367958}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &754821689
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754821687}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.80221415, y: 0.46339053}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.23266506, y: 1.0498272}
+  m_EdgeRadius: 0
 --- !u!1 &1896320234
 GameObject:
   m_ObjectHideFlags: 0
@@ -9,7 +67,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1896320235}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: EnemyAttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24,12 +82,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1896320234}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.74, y: 1.31, z: 0}
+  m_LocalPosition: {x: 3.1, y: 1.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4187483004367958}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1022982428031314
 GameObject:
@@ -42,10 +100,10 @@ GameObject:
   - component: {fileID: 4187483004367958}
   - component: {fileID: 95294889248297422}
   - component: {fileID: 114571654311812176}
-  - component: {fileID: 5361943912317170614}
   - component: {fileID: 5866309692807879999}
   - component: {fileID: 318265423}
-  m_Layer: 7
+  - component: {fileID: 598055072}
+  m_Layer: 8
   m_Name: Skeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,6 +122,7 @@ Transform:
   m_LocalScale: {x: -0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 754821688}
   - {fileID: 4127649232216688}
   - {fileID: 4826948769709954}
   - {fileID: 4123888071909326}
@@ -106,32 +165,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sortingOrder: -1
   applySpriterZOrder: 0
---- !u!61 &5361943912317170614
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1022982428031314}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.6035218, y: 2.3399088}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.3391962, y: 4.87128}
-  m_EdgeRadius: 0
 --- !u!50 &5866309692807879999
 Rigidbody2D:
   serializedVersion: 4
@@ -166,15 +199,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxEnemyHealth: 100
-  enemyMoveSpeed: 0.5
+  currentEnemyHealth: 0
+  enemyMoveSpeed: 2
   chaseDistance: 3
   attackRange: 0.2
   enemyLayers:
     serializedVersion: 2
     m_Bits: 256
   attackDamage: 20
-  attackRate: 1
+  attackRate: 2
   attackPoint: {fileID: 1896320235}
+  flipObject: {fileID: 754821687}
+--- !u!70 &598055072
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022982428031314}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.06908369, y: 2.5008512}
+  m_Size: {x: 1.8540506, y: 4.951621}
+  m_Direction: 0
 --- !u!1 &1051073019290164
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,7 +235,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4812867818860662}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: bone_003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,7 +268,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4826948769709954}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: bone_005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,7 +289,7 @@ Transform:
   m_Children:
   - {fileID: 4674149055122382}
   m_Father: {fileID: 4187483004367958}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -101.70458}
 --- !u!1 &1088112140071272
 GameObject:
@@ -249,7 +300,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4123888071909326}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: bone_006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,7 +324,7 @@ Transform:
   - {fileID: 4028136751990744}
   - {fileID: 4586286697398614}
   m_Father: {fileID: 4187483004367958}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 79.8827}
 --- !u!1 &1098012686478298
 GameObject:
@@ -285,7 +336,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4456368060767722}
   - component: {fileID: 212922324793651836}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Left Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -368,7 +419,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4028136751990744}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: bone_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -402,7 +453,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4232250624380604}
   - component: {fileID: 212844090261339188}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Right Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -485,7 +536,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4253288217770320}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: bone_000
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -518,7 +569,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4127649232216688}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: bone_004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -539,7 +590,7 @@ Transform:
   m_Children:
   - {fileID: 4456368060767722}
   m_Father: {fileID: 4187483004367958}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1304868124465552
 GameObject:
@@ -551,7 +602,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4072018610483974}
   - component: {fileID: 212378114873823674}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Left Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -635,7 +686,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4530450144604626}
   - component: {fileID: 212323898541993424}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Left Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -719,7 +770,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4358327176971620}
   - component: {fileID: 212632115033238402}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: SlashFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -739,7 +790,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4187483004367958}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 2.937661}
 --- !u!212 &212632115033238402
 SpriteRenderer:
@@ -803,7 +854,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4674149055122382}
   - component: {fileID: 212178860583278698}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Right Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -887,7 +938,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4586286697398614}
   - component: {fileID: 212226045655763880}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -970,7 +1021,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4420234688425312}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: bone_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1003,7 +1054,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4881966380245306}
   - component: {fileID: 212430852285739830}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Right Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1087,7 +1138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4881835768959794}
   - component: {fileID: 212297307959450946}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1170,7 +1221,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4731297919499444}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: bone_007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1204,7 +1255,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4686952391434382}
   - component: {fileID: 212607775326916246}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1289,7 +1340,7 @@ GameObject:
   - component: {fileID: 4245625837366328}
   - component: {fileID: 212313612726341332}
   - component: {fileID: 3340776435829956104}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Face 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
